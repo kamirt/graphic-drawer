@@ -10,7 +10,7 @@ For use:
 <li>3) start a new app in your django project and copy this files inside the created folder with replacing default files. It doesn't matter how your app will be named. It was just "loader" for me.
 <li>4) Put **'rest_framework'** and **'your_app_name'** to django-settings **INSTALLED_APPS** list.
 <li>5) Include urls from this app to your main urls.py file by:
-```
+```python
  from django.conf.urls import include
  from your_app_name import urls as your_app_urls
 
