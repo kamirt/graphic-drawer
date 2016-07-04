@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<html ng-app='app'>
+<head>
+<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="{% static '/static/loader/js/main.js' %}"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<div class="row">
+	<div class="col-md-3">
+	</div>
+	<div class="col-md-6">
+	<div style="margin-top:50px; text-align:center">
+		<form enctype="multipart/form-data" class="sendfile" action="" method="post">
+			{% csrf_token %}
+			{{ form }}
+
+			<button type="submit" class="btn btn-success" style="margin-bottom:10px; margin-top:10px;">Обработать</button>
+
+		</form>
+
+		<div ng-controller="graphCtrl">
+
+			<div id="container" style="width:100%; height:300px; border:1px solid; border-color:grey">	
+			</div>
+			<div style="text-align:center;">
+			<button ng-click="buildGraph()" class="btn btn-info" style="margin-top: 20px;">Построить график</button>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+	</div>
+	
+</div>
+</html>
