@@ -16,7 +16,7 @@ For use:
 
  urlpatterns = [
     #your existing urls
-    url(r'^any_url/', include(your_app_urls)
+    url(r'^any_url/', include(your_app_urls))
  ]
 ```
 <li>6) Do your database migrated with something like: 
